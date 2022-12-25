@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="id1" placeholder="Зашифровать" />
+    <button onclick="Encrypt()">Зашифровать</button>
+    <input type="text" id="id2" placeholder="Расшифровать" />
+    <button onclick="code2()">Расшифровать</button>
+    <script type="text/javascript">
+      function Encrypt() {
+        var a = document.getElementById("id1").value;
+        var abc = [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+        ];
+        var sum = [
+          "╳",
+          "❍",
+          "⟳",
+          "⟰",
+          "☡",
+          "⋲",
+          "⊻",
+          "⌘",
+          "⇚",
+          "⏏",
+          "♯",
+          "ⅻ",
+          "ℬ",
+          "∻",
+          "⋠",
+          "℄",
+          "∦",
+          "ᶔ",
+          "ᶓ",
+          "ᵫ",
+          "؁",
+          "؇",
+          "؏",
+          "ؕ",
+          "؛",
+          "d",
+        ];
+        var str = "";
+        for (i = 0; i < 26; i++) {
+          var replace = abc[i];
+          var re = new RegExp(replace, "g");
+          var a = a.replace(re, sum[i]);
+          if (i == 25) {
+            var str = a;
+          }
+        }
+        document.write(str);
+      }
+      function code2() {
+        var a = document.getElementById("id2").value;
+        var abc = [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+        ];
+        var sum = [
+          "╳",
+          "❍",
+          "⟳",
+          "⟰",
+          "☡",
+          "⋲",
+          "⊻",
+          "⌘",
+          "⇚",
+          "⏏",
+          "♯",
+          "ⅻ",
+          "ℬ",
+          "∻",
+          "⋠",
+          "℄",
+          "∦",
+          "ᶔ",
+          "ᶓ",
+          "ᵫ",
+          "؁",
+          "؇",
+          "؏",
+          "ؕ",
+          "؛",
+          "d",
+        ];
+        var str = "";
+        for (i = 0; i < 26; i++) {
+          var replace = sum[i];
+
+          var re = new RegExp(replace, "gu");
+          var a = a.replace(re, abc[i]);
+          if (i == 25) {
+            var str = a;
+          }
+        }
+        document.write(str);
+      }
+    </script>
+  </body>
+</html>
